@@ -1,17 +1,17 @@
+import { Link } from "react-router-dom";
 import logo from "../img/logo.png";
-import cart from "../img/cart.svg";
-import user from "../img/user.svg";
-import search from "../img/search.svg";
-import "./App.css";
+// import cart from "../img/cart.svg";
+// import user from "../img/user.svg";
+// import search from "../img/search.svg";
 
 function Header() {
   return (
     <div className="main_header">
       <nav className="navbar navbar-expand-lg ">
         <div className="container">
-          <a className="navbar-brand" href="/">
+          <Link className="navbar-brand" to="/">
             <img src={logo} alt="" />
-          </a>
+          </Link>
 
           <button
             className="navbar-toggler"
@@ -25,55 +25,55 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <a className="nav-link active" href="/">
+                <Link className="nav-link active" to="/">
                   Home
-                </a>
+                </Link>
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="/about">
+                <Link className="nav-link" to="/about">
                   About Us
-                </a>
+                </Link>
               </li>
 
-              <li className="nav-item">
-                <a className="nav-link" href="/services">
+              {/* <li className="nav-item">
+                <Link className="nav-link" to="/services">
                   T-Shirt
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/services">
+                <Link className="nav-link" to="/jeans">
                   Jeans
-                </a>
+                </Link>
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="/contact">
+                <Link className="nav-link" to="/contact">
                   Contact Us
-                </a>
-              </li>
+                </Link>
+              </li> */}
             </ul>
           </div>
-          <div className="">
+          {/* <div className="">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <Link className="nav-link" to="/">
                   <img src={search} alt="" />
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link cart_cont" href="/">
+                <Link className="nav-link cart_cont" to="/cart">
                   <img src={cart} alt="" />
                   <span className="cart_number">2</span>
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <Link className="nav-link" to="/">
                   <img src={user} alt="image-logo" />
-                </a>
+                </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </nav>
     </div>

@@ -17,15 +17,14 @@ import img_30 from "../img/img_30.png";
 import right from "../img/right.svg";
 import user1 from "../img/user1.svg";
 import date1 from "../img/date1.svg";
-import "./App.css";
-import Header from "./Header";
-import Footer from "./Footer";
 import { bestSelling, collections } from "../utils/products";
+import { ratings } from "../utils/ratings";
+import { posts } from "../utils/posts";
+import "./App.css";
 
 function App() {
   return (
     <div>
-      <Header />
       <section className="banner_sec">
         <div className="container">
           <div className="row align-items-center ">
@@ -33,9 +32,9 @@ function App() {
               <div className="heading">
                 <h1>CAPRONIK JEANS Made Easy For Everyone</h1>
                 <p>
-                  Columbus Day Sale Alert! Up to 50% off on all furniture for a
-                  limited time! Biggest doorbuster event featuring top brands!
-                  Jennifer delivers nationwide with lowest price guaranteed!
+                  Premium Denim Jeans Tailored in Indore. Experience the perfect
+                  blend of style, durability, and fit—made for the modern Indian
+                  lifestyle.
                 </p>
                 <a href="/" className="btn btn_theme btn-lg btn_r">
                   Shop Now
@@ -52,14 +51,11 @@ function App() {
         <div className="container">
           <div className="heading text-center">
             <h1>Shop By Collections</h1>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy
-            </p>
+            <p>Find Your Fit, Define Your Style</p>
           </div>
           <div className="row">
             {collections.map((item) => (
-              <div className="col-md-2">
+              <div className="col-md-2" key={item.name}>
                 <div className="box_1">
                   <img src={item.image} alt="" />
                   <h4>{item.name}</h4>
@@ -74,14 +70,15 @@ function App() {
         <div className="container">
           <div className="heading text-center">
             <h1>Best Selling Product</h1>
+            <p>Our Most Loved Denim.</p>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy
+              Join thousands of customers who trust Capronik for durability,
+              fit, and style.
             </p>
           </div>
           <div className="row">
             {bestSelling.map((item) => (
-              <div className="col-md-3 mb_set1">
+              <div className="col-md-3 mb_set1" key={item.name}>
                 <div className="box_2">
                   <img src={item.image} alt="" />
                   <div className="cont_card">
@@ -205,46 +202,26 @@ has been the industry's standard dummy
         <div className="container">
           <div className="heading text-center">
             <h1>What Our Customers Say</h1>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy
-            </p>
+            <p>Styled & Loved Across India</p>
           </div>
           <div className="row">
-            <div className="col-md-6">
-              <div className="card_1 card_pad">
-                <img src={img_27} alt="" />
-                <p>
-                  I've had a great experience with Jennifer Furniture. The
-                  delivery team was polite and efficient, and my new furniture
-                  looks great in my home.
-                </p>
-                <div className="user_p1 d-flex align-items-center mt-3">
-                  <img src={img_26} alt="" />
-                  <div className="">
-                    <h4>Bob Schrover</h4>
-                    <p>President, Werfpop</p>
+            {ratings.map((rating) => {
+              return (
+                <div className="col-md-6" key={rating.name}>
+                  <div className="card_1 card_pad">
+                    <img src={img_27} alt="" />
+                    <p>{rating.description}</p>
+                    <div className="user_p1 d-flex align-items-center mt-3">
+                      <img src={img_26} alt="" />
+                      <div className="">
+                        <h4>{rating.name}</h4>
+                        <p>{rating.location}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="card_1 card_pad">
-                <img src={img_27} alt="" />
-                <p>
-                  I've had a great experience with Jennifer Furniture. The
-                  delivery team was polite and efficient, and my new furniture
-                  looks great in my home.
-                </p>
-                <div className="user_p1 d-flex align-items-center mt-3">
-                  <img src={img_26} alt="" />
-                  <div className="">
-                    <h4>Bob Schrover</h4>
-                    <p>President, Werfpop</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -297,14 +274,11 @@ has been the industry's standard dummy
         <div className="container">
           <div className="heading text-center">
             <h1>Our Latest Posts</h1>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy
-            </p>
+            <p>From Our Studio Journal</p>
           </div>
           <div className="row">
-            {[1, 2, 3].map(() => (
-              <div className="col-md-4 mb_set1">
+            {posts.map((post) => (
+              <div className="col-md-4 mb_set1" key={post.title}>
                 <div className="card_2 card_pad box_6">
                   <div className="img2">
                     <img src={img_7} alt="" />
@@ -312,20 +286,15 @@ has been the industry's standard dummy
                   <div className="cont_card">
                     <ul className="ul_set">
                       <li>
-                        <img src={user1} alt="" /> Admin
+                        <img src={user1} alt="" /> {post.user}
                       </li>
                       <li>
-                        <img src={date1} alt="" /> 8 Fub 2022
+                        <img src={date1} alt="" />{" "}
+                        {post.date.toLocaleDateString()}
                       </li>
                     </ul>
-                    <h4>
-                      The standard Lorem Ipsum passage, used since the 1500s
-                    </h4>
-                    <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s.
-                    </p>
+                    <h4>{post.title}</h4>
+                    <p>{post.description}</p>
                   </div>
                 </div>
               </div>
@@ -333,7 +302,6 @@ has been the industry's standard dummy
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 }

@@ -1,5 +1,5 @@
+import { Link } from "react-router-dom";
 import logo from "../img/logo.png";
-import "./App.css";
 import {
   PROJECT_NAME,
   PROJECT_CONTACT,
@@ -16,27 +16,22 @@ function Footer() {
           <div className="row">
             <div className="col-md-3">
               <img src={logo} alt="" />
-              <p>
-                For over 50 years Jennifer Furniture now owned by Jennifer Opco
-                has been committed to offering consumers a wide-range of
-                comfortable, stylish, quality merchandise at incredible values
-                for every room in your home!
-              </p>
+              <p>Proudly crafted in the heart of Indore</p>
             </div>
             <div className="col-md-3">
               <h4>Quick Links</h4>
               <ul className="ul_set">
                 <li>
-                  <a href="/">Home </a>
+                  <Link to="/">Home </Link>
                 </li>
                 <li>
-                  <a href="/">About Us</a>
+                  <Link to="/about">About Us</Link>
                 </li>
                 <li>
-                  <a href="/">Shop Now </a>
+                  <Link to="/products">Shop Now </Link>
                 </li>
                 <li>
-                  <a href="/">Contact Us </a>
+                  <Link to="/contact">Contact Us </Link>
                 </li>
               </ul>
             </div>
@@ -59,7 +54,7 @@ function Footer() {
             </div>
             <div className="col-md-3">
               <h4>Get In Touch</h4>
-              <h5>Web Support / Websales</h5>
+              <h5>Support / Websales</h5>
               <ul className="ul_set">
                 <li>
                   <a href="/">

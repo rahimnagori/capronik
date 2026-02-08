@@ -4,6 +4,8 @@ const Routes = {
   Products: "/products",
   Contact: "/contact",
   Privacy: "/privacy",
+  Blogs: "/blogs/",
+  BlogDetails: "/blogs/:id",
 };
 
 const RoutesConfig = [
@@ -14,6 +16,10 @@ const RoutesConfig = [
   {
     name: "About",
     path: Routes.About,
+  },
+  {
+    name: "Blogs",
+    path: Routes.Blogs,
   },
   {
     name: "Products",

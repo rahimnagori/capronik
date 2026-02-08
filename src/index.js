@@ -8,6 +8,8 @@ import App from "./components/App";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Privacy from "./components/Privacy";
+import Blogs from "./components/Blogs";
+import BlogDetails from "./components/BlogDetails";
 import ErrorPage from "./components/ErrorPage";
 import { Routes } from "./utils/routes";
 
@@ -33,6 +35,14 @@ const appRouter = createBrowserRouter([
       {
         path: Routes.Privacy,
         element: <Privacy />,
+      },
+      {
+        path: Routes.Blogs,
+        element: <Blogs />,
+      },
+      {
+        path: Routes.BlogDetails,
+        element: <BlogDetails />,
       },
     ],
     errorElement: <ErrorPage />,

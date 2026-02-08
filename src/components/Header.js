@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
-import logo from "../img/logo.png";
+import { logo } from "../utils/images";
 import { Routes, RoutesConfig } from "../utils/routes";
-// import cart from "../img/cart.svg";
-// import user from "../img/user.svg";
-// import search from "../img/search.svg";
 
 function Header() {
   return (

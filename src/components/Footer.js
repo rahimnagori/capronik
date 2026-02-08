@@ -7,6 +7,7 @@ import {
   PROJECT_WORKING_HOURS,
   SOCIAL_MEDIA_LINKS,
 } from "../utils/constants";
+import { RoutesConfig } from "../utils/routes";
 
 function Footer() {
   return (
@@ -21,18 +22,13 @@ function Footer() {
             <div className="col-md-3">
               <h4>Quick Links</h4>
               <ul className="ul_set">
-                <li>
-                  <Link to="/">Home </Link>
-                </li>
-                <li>
-                  <Link to="/about">About Us</Link>
-                </li>
-                <li>
-                  <Link to="/products">Shop Now </Link>
-                </li>
-                <li>
-                  <Link to="/contact">Contact Us </Link>
-                </li>
+                {RoutesConfig.map((route) => {
+                  return (
+                    <li>
+                      <Link to={route.path}>{route.name}</Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
             <div className="col-md-3">
@@ -54,7 +50,7 @@ function Footer() {
             </div>
             <div className="col-md-3">
               <h4>Get In Touch</h4>
-              <h5>Support / Websales</h5>
+              <h5>Sales & Support</h5>
               <ul className="ul_set">
                 <li>
                   <a href="/">
@@ -63,7 +59,7 @@ function Footer() {
                 </li>
                 <li>
                   <a href="/">
-                    <i className="fa-regular fa-clock"></i>{" "}
+                    <i className="fa-regular fa-clock"></i>
                     {PROJECT_WORKING_HOURS}
                   </a>
                 </li>

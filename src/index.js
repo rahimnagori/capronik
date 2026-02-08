@@ -1,39 +1,33 @@
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
-// import AppLayout from "./components/AppLayout";
+import AppLayout from "./components/AppLayout";
 import App from "./components/App";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import About from "./components/About";
+import Contact from "./components/Contact";
 import ErrorPage from "./components/ErrorPage";
+import { Routes } from "./utils/routes";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const AppLayout = () => {
-  return (
-    <div>
-      <Header />
-      <Outlet />
-      <Footer />
-    </div>
-  );
-};
-
 const appRouter = createBrowserRouter([
   {
-    path: "/",
+    path: Routes.Home,
     element: <AppLayout />,
     children: [
       {
-        path: "/",
+        path: Routes.Home,
         element: <App />,
       },
       {
-        path: "/about",
+        path: Routes.About,
         element: <About />,
+      },
+      {
+        path: Routes.Contact,
+        element: <Contact />,
       },
     ],
     errorElement: <ErrorPage />,

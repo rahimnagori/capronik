@@ -7,6 +7,7 @@ import AppLayout from "./components/AppLayout";
 import App from "./components/App";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Privacy from "./components/Privacy";
 import ErrorPage from "./components/ErrorPage";
 import { Routes } from "./utils/routes";
 
@@ -28,6 +29,10 @@ const appRouter = createBrowserRouter([
       {
         path: Routes.Contact,
         element: <Contact />,
+      },
+      {
+        path: Routes.Privacy,
+        element: <Privacy />,
       },
     ],
     errorElement: <ErrorPage />,

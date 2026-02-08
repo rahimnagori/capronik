@@ -7,7 +7,7 @@ import {
   PROJECT_WORKING_HOURS,
   SOCIAL_MEDIA_LINKS,
 } from "../utils/constants";
-import { RoutesConfig } from "../utils/routes";
+import { Routes, RoutesConfig } from "../utils/routes";
 
 function Footer() {
   return (
@@ -35,9 +35,9 @@ function Footer() {
               <h4>Know Link</h4>
               <ul className="ul_set">
                 <li>
-                  <a href="/">Privacy Policy</a>
+                  <Link to={Routes.Privacy}>Privacy Policy</Link>
                 </li>
-                <li>
+                {/* <li>
                   <a href="/">Term & Conditions</a>
                 </li>
                 <li>
@@ -45,7 +45,7 @@ function Footer() {
                 </li>
                 <li>
                   <a href="/">Delivery</a>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div className="col-md-3">
@@ -79,6 +79,8 @@ function Footer() {
           <div className="row align-items-center">
             <div className="col-md-6">
               <p>© 2025 {PROJECT_NAME}. All rights reserved.</p>
+              <p>Powered by PixelPerfect.</p>
+              {/* color being used #0e0f38 & #ed1c24 */}
             </div>
             <div className="col-md-6">
               <ul className="ul_set">

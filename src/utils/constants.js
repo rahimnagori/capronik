@@ -3,6 +3,7 @@ const PROJECT_ADDRESS =
   "Saksham Plaza, Peer Gali, Indore, Madhya Pradesh, India";
 const PROJECT_CONTACT = "+91-958400-9024";
 const PROJECT_EMAIL = "capronikjeans@gmail.com";
+const PROJECT_CONTACT_EMAIL = "contact@capronik.com";
 const PROJECT_WORKING_HOURS = "Mon-Sun 10am - 7pm IST";
 
 const SOCIAL_MEDIA_LINKS = [
@@ -29,5 +30,6 @@ export {
   SOCIAL_MEDIA_LINKS,
   PROJECT_CONTACT,
   PROJECT_EMAIL,
+  PROJECT_CONTACT_EMAIL,
   PROJECT_WORKING_HOURS,
 };

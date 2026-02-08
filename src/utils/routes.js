@@ -3,6 +3,7 @@ const Routes = {
   About: "/about",
   Products: "/products",
   Contact: "/contact",
+  Privacy: "/privacy",
 };
 
 const RoutesConfig = [
